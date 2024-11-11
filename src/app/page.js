@@ -7,6 +7,7 @@ import { useState } from "react";
 import AuthPage from "@/pages/login";
 import Objetivos from "@/pages/objetivos";
 import Agradecimento from "@/pages/agradecimento";
+import GraficoInvestimento from "@/pages/invest";
 
 export default function Home() {
   const [component, setComponent] = useState('auth');
@@ -39,6 +40,9 @@ export default function Home() {
             <p className="hover:underline" onClick={() => setComponent('autors')}>
               Autores
             </p>
+            <p className="hover:underline" onClick={() => setComponent('invest')}>
+              Simular Investimento
+            </p>
           </div>
           
         </div>
@@ -55,6 +59,7 @@ export default function Home() {
       {component === 'faq' && <FAQPage />}
       {component === 'objetivos' && <Objetivos />}
       {component === 'autors' && <Agradecimento />}
+      {component === 'invest' && <GraficoInvestimento />}
     </div>
   );
 }
